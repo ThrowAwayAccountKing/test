@@ -1,3 +1,4 @@
+print("version 1.01")
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
