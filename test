@@ -3,11 +3,6 @@ local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
-repeat wait(1)
-    local success, response = pcall(function()
-        LocalPlayer:GetMouse()
-    end)
-until success == true
 local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
 local pfp
@@ -292,7 +287,12 @@ function DiscordLib:Window(text)
 
 	CloseBtn.MouseButton1Click:Connect(
 		function()
-			MainFrame:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .3, true)
+			game.StarterGui:SetCore("SendNotification",  {
+			    Title = "Notification";
+			    Text = "This script cannot be closed";
+			    Duration = 5;
+			    Callback = NotificationBindable;
+			})
 		end
 	)
 
