@@ -318,7 +318,7 @@ function DiscordLib:Window(text)
 
 	MinimizeBtn.MouseButton1Click:Connect(
 		function()
-		    local positon = MainFrame.Position - UDim2.new(0, 0, 0.2, 0)
+		    local positon = MainFrame.Position
 			if minimized == false then
 				MainFrame:TweenSize(
 					UDim2.new(0, 681, 0, 22),
